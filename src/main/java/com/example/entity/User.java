@@ -4,19 +4,25 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "User")
 @Data
+@Entity
+@Table(name = "user")
 public class User {
-    @Id
-    @GeneratedValue
-    private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long ID;
+
+    @Column(name="username")
     private String username;
 
-    @Column(nullable = false)
+    @Column(name="name")
+    private String name;
+
+    @Column(name="password")
     private String password;
 
-    private String roleName;
+    @Enumerated(EnumType.STRING)
+    @Column(name="role")
+    private Role role;
 }

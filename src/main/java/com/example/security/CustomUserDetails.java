@@ -4,9 +4,11 @@ import com.example.entity.User;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,12 +22,12 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        String roleName1 = "ROLE_" + user.getRoleName();
+//        String roleName1 = "ROLE_" + user.getRoleName();
         String roleName2 = "ROLE_ADMIN";
         List<GrantedAuthority> authorities = new ArrayList();
-        SimpleGrantedAuthority role1 = new SimpleGrantedAuthority(roleName1);
+//        SimpleGrantedAuthority role1 = new SimpleGrantedAuthority(roleName1);
         SimpleGrantedAuthority role2 = new SimpleGrantedAuthority(roleName2);
-        authorities.add(role1);
+//        authorities.add(role1);
         authorities.add(role2);
         return authorities;
     }
