@@ -33,3 +33,4 @@ build/
 mvnw
 mvnw.cmd
 Angular/node_modules
+client-product-management/node_modules
