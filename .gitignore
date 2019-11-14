@@ -30,3 +30,6 @@ build/
 ### VS Code ###
 .vscode/
 /.mvn/wrapper/
+mvnw
+mvnw.cmd
+Angular/node_modules
